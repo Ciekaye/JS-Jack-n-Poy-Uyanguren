@@ -11,7 +11,7 @@ playerChoiceImg.addEventListener("click", function () {
     const choiceIndex = playerChoices.indexOf(this.id);
     const nextChoiceIndex = (choiceIndex + 1) % playerChoices.length;
     this.id = playerChoices[nextChoiceIndex];
-    this.src = `../images/${this.id}.png`;
+    this.src = `images/${this.id}.png`;
 });
 
 playButton.addEventListener("click", playGame);
@@ -21,7 +21,7 @@ function playGame() {
     const playerChoice = playerChoiceImg.id;
     const botChoice = playerChoices[Math.floor(Math.random() * 3)];
 
-    botChoiceImg.src = `../images/${botChoice}.png`;
+    botChoiceImg.src = `images/${botChoice}.png`;
     const result = determineWinner(playerChoice, botChoice);
     resultText.textContent = result;
 
@@ -54,8 +54,8 @@ function updateHistory() {
 
 function resetGame() {
     playerChoiceImg.id = "rock";
-    playerChoiceImg.src = `../images/rock.png`;
-    botChoiceImg.src = `../images/rock.png`;
+    playerChoiceImg.src = `images/rock.png`;
+    botChoiceImg.src = `images/rock.png`;
     resultText.textContent = "Choose an option";
     gameHistory = [];
     updateHistory();
